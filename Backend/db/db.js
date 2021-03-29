@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-const url = "your url here"
+const url = process.env.DATABASE_URL
 // Connect MongoDB at default port 27017.
 let mong = mongoose.connect(url, {
     useNewUrlParser: true,

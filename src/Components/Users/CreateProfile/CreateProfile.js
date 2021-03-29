@@ -245,7 +245,7 @@ export class CreatePost extends Component {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="password">Password </label>
+                        <label htmlFor="bio">Description </label>
                         <textarea
                             type='text'
                             name='bio'
@@ -261,7 +261,7 @@ export class CreatePost extends Component {
                             <div className="mt-1"><span className='error text-danger'>{this.state.errors.bio}</span></div>}
                     </div>
                     <div className="form-group">
-                        <label htmlFor="password">Image </label>
+                        <label htmlFor="image">Image </label>
                         <ImageUpload
                             id="imagePath"
                             name="imagePath"

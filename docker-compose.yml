@@ -1,0 +1,33 @@
+version: '3'
+services: 
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes: 
+      - vol-mongo-db:/data/db
+    networks:
+      - mongo-net 
+  backend:
+    build: Backend/
+    networks: 
+      - mongo-net
+    ports:
+      - 3001:3001
+    volumes: 
+      - vol-images:/usr/src/app/images
+    environment:
+      DATABASE_URL: mongodb://mongo:27017/blog
+      JWT_SECRET: secretJWT12345
+  front:
+    build: .
+    networks: 
+      - mongo-net
+    ports:
+      - 8080:8080
+networks: 
+  mongo-net:
+
+volumes:
+  vol-mongo-db:
+  vol-images:
